@@ -1,6 +1,6 @@
 local Whitelist = {
 [8867832001] = true,
-[9233487605] = true,
+[9233487601] = true,
 }
 
 local Players = game:GetService("Players")
