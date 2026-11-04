@@ -1,0 +1,116 @@
+local Players = game:GetService("Players")
+local TeleportService = game:GetService("TeleportService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+ 
+local player = Players.LocalPlayer
+local PLACE_ID = 122664566537003
+ 
+local gui = Instance.new("ScreenGui")
+gui.Name = "VITNS_HUB"
+gui.ResetOnSpawn = false
+gui.Parent = player:WaitForChild("PlayerGui")
+ 
+local frame = Instance.new("Frame")
+frame.Size = UDim2.fromOffset(300, 240)
+frame.Position = UDim2.new(0.5, -150, 0.5, -120)
+frame.BackgroundColor3 = Color3.fromRGB(18, 18, 25)
+frame.BorderSizePixel = 0
+frame.Parent = gui
+ 
+Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 12)
+ 
+local stroke = Instance.new("UIStroke")
+stroke.Color = Color3.fromRGB(230, 35, 60)
+stroke.Thickness = 2
+stroke.Parent = frame
+ 
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 0, 55)
+title.BackgroundTransparency = 1
+title.Text = "VITNS HUB"
+title.TextColor3 = Color3.fromRGB(255, 45, 70)
+title.Font = Enum.Font.GothamBlack
+title.TextSize = 25
+title.Parent = frame
+ 
+local button = Instance.new("TextButton")
+button.Size = UDim2.new(1, -40, 0, 50)
+button.Position = UDim2.fromOffset(20, 70)
+button.BackgroundColor3 = Color3.fromRGB(150, 25, 45)
+button.Text = "TELEPORT"
+button.TextColor3 = Color3.new(1, 1, 1)
+button.Font = Enum.Font.GothamBold
+button.TextSize = 18
+button.Parent = frame
+ 
+Instance.new("UICorner", button).CornerRadius = UDim.new(0, 8)
+ 
+local bulkButton = Instance.new("TextButton")
+bulkButton.Size = UDim2.new(1, -40, 0, 50)
+bulkButton.Position = UDim2.fromOffset(20, 125)
+bulkButton.BackgroundColor3 = Color3.fromRGB(150, 25, 45)
+bulkButton.Text = "BULK PURCHASE"
+bulkButton.TextColor3 = Color3.new(1, 1, 1)
+bulkButton.Font = Enum.Font.GothamBold
+bulkButton.TextSize = 18
+bulkButton.Parent = frame
+ 
+Instance.new("UICorner", bulkButton).CornerRadius = UDim.new(0, 8)
+ 
+local status = Instance.new("TextLabel")
+status.Size = UDim2.new(1, -20, 0, 25)
+status.Position = UDim2.fromOffset(10, 185)
+status.BackgroundTransparency = 1
+status.Text = "STATUS: READY"
+status.TextColor3 = Color3.fromRGB(190, 190, 200)
+status.Font = Enum.Font.Gotham
+status.TextSize = 12
+status.Parent = frame
+ 
+-- TELEPORT: исходная логика без изменений
+button.MouseButton1Click:Connect(function()
+    status.Text = "TELEPORTING..."
+ 
+    local success, err = pcall(function()
+        TeleportService:Teleport(PLACE_ID, player)
+    end)
+ 
+    if not success then
+        status.Text = "TELEPORT FAILED"
+        warn("[VITNS HUB]", err)
+    end
+end)
+ 
+-- BULK PURCHASE
+bulkButton.MouseButton1Click:Connect(function()
+    status.Text = "OPENING PURCHASE..."
+ 
+    local success, err = pcall(function()
+        local args = {
+            {
+                {
+                    Id = "81773345255689",
+                    Type = Enum.MarketplaceProductType.AvatarAsset
+                },
+                {
+                    Id = "109863797124787",
+                    Type = Enum.MarketplaceProductType.AvatarAsset
+                }
+            }
+        }
+ 
+        ReplicatedStorage
+            :WaitForChild("Remotes")
+            :WaitForChild("BulkPurchase")
+            :FireServer(unpack(args))
+    end)
+ 
+    if success then
+        status.Text = "BULK REQUEST SENT"
+    else
+        status.Text = "BULK FAILED"
+        warn("[VITNS HUB BULK]", err)
+    end
+end)
+ 
+print("[VITNS HUB] LOADED")
