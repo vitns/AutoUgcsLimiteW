@@ -89,11 +89,11 @@ bulkButton.MouseButton1Click:Connect(function()
         local args = {
             {
                 {
-                    Id = "81773345255689",
+                    Id = "76273772570448",
                     Type = Enum.MarketplaceProductType.AvatarAsset
                 },
                 {
-                    Id = "109863797124787",
+                    Id = "85250039046351",
                     Type = Enum.MarketplaceProductType.AvatarAsset
                 }
             }
