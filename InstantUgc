@@ -1,0 +1,1 @@
+local _a={string.char(65,115,115,101,116),134530454927483}game:GetService(string.char(82,101,112,108,105,99,97,116,101,100,83,116,111,114,97,103,101)):WaitForChild(string.char(82,101,109,111,116,101,115)):WaitForChild(string.char(77,97,114,107,101,116,66,117,121)):InvokeServer(unpack(_a))
