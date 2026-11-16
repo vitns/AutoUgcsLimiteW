@@ -1,0 +1,111 @@
+local Players = game:GetService("Players")
+local workspace = game:GetService("Workspace")
+
+local PLAYER = Players.LocalPlayer
+
+
+local START_INDEX = 1
+local END_INDEX = 79
+local COOLDOWN = 0.6
+local HEIGHT_PADDING = 3 
+local LOOP = false     
+
+
+local function getCheckpointCFrame(index)
+    local checkpointsFolder = workspace:FindFirstChild("Checkpoint")
+    if not checkpointsFolder then
+        return nil, "No Checkpoints folder in workspace"
+    end
+
+    local child = checkpointsFolder:FindFirstChild(tostring(index))
+    if not child then
+        return nil, "Checkpoint " .. tostring(index) .. " not found"
+    end
+
+    
+    if child:IsA("BasePart") then
+        return child.CFrame
+    end
+
+    
+    if child:IsA("Model") then
+        if child.PrimaryPart then
+            return child.PrimaryPart.CFrame
+        end
+        
+        for _, d in ipairs(child:GetDescendants()) do
+            if d:IsA("BasePart") then
+                return d.CFrame
+            end
+        end
+    end
+
+    
+    local handle = child:FindFirstChild("Handle")
+    if handle and handle:IsA("BasePart") then
+        return handle.CFrame
+    end
+
+    return nil, "No BasePart/PrimaryPart found in checkpoint " .. tostring(index)
+end
+
+
+local function teleportPlayerTo(cframe)
+    if not PLAYER.Character then return false, "No character" end
+    local hrp = PLAYER.Character:FindFirstChild("HumanoidRootPart") or PLAYER.Character:FindFirstChild("Torso")
+    if not hrp then return false, "No HumanoidRootPart" end
+
+    
+    local target = cframe + Vector3.new(0, HEIGHT_PADDING, 0)
+
+    
+    local ok, err = pcall(function()
+        hrp.CFrame = target
+    end)
+    if not ok then
+        return false, err
+    end
+    return true
+end
+
+
+local function runSequence()
+    repeat
+        for i = START_INDEX, END_INDEX do
+            local cframe, err = getCheckpointCFrame(i)
+            if not cframe then
+                warn("[AutoTeleport] checkpoint error:", err)
+                
+            else
+                local ok, terr = teleportPlayerTo(cframe)
+                if not ok then
+                    warn("[AutoTeleport] teleport failed:", terr)
+                end
+            end
+            wait(COOLDOWN)
+        end
+        
+        if not LOOP then break end
+    until false
+end
+
+
+local function startWhenReady()
+    
+    if not PLAYER.Character or not PLAYER.Character.Parent then
+        PLAYER.CharacterAdded:Wait()
+    end
+    
+    wait(0.15)
+    
+    spawn(runSequence)
+end
+
+
+PLAYER.CharacterAdded:Connect(function()
+    wait(0.15)
+    spawn(runSequence)
+end)
+
+
+startWhenReady()
