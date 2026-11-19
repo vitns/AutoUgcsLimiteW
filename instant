@@ -26,7 +26,6 @@ local ItemIds = {
  
 
 local FireUGC = ReplicatedStorage
-    :WaitForChild("Remotes")
     :WaitForChild("PromptPurchase")
  
 
